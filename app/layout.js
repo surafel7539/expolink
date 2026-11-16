@@ -1,6 +1,5 @@
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
-import SiteNav from '@/components/SiteNav';
 import SiteFooter from '@/components/SiteFooter';
 
 const jakarta = Plus_Jakarta_Sans({
@@ -30,7 +29,6 @@ export default function RootLayout({ children }) {
         <a className="skip-link" href="#main">
           Skip to content
         </a>
-        <SiteNav />
         <main id="main">{children}</main>
         <SiteFooter />
       </body>

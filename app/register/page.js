@@ -1,5 +1,6 @@
 import { event, packages } from '@/lib/event';
 import RegisterForm from './RegisterForm';
+import SiteNav from '@/components/SiteNav';
 import { IconCalendar, IconCheck, IconClock, IconPin, IconTicket } from '@/components/Icons';
 
 export const metadata = {
@@ -15,6 +16,7 @@ export default async function RegisterPage({ searchParams }) {
 
   return (
     <>
+      <SiteNav />
       <section className="page-hero">
         <div className="container">
           <span className="section-eyebrow">Exhibitor registration</span>

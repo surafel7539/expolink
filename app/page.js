@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SiteNav from '@/components/SiteNav';
 import { event, industries, packages } from '@/lib/event';
 import {
   IconArrow,
@@ -101,73 +102,33 @@ export default function HomePage() {
       <section className="hero-section">
         <div className="hero-shell">
           <div className="hero-card">
-            <div className="hero-copy">
-              <span className="hero-kicker">
-                <IconSpark size={14} />
-                Registration open · {event.boothsLeft} booths left
-              </span>
-              <h1>
-                <span className="hero-line-one">Meet your next</span>
-                <span className="hero-line-two">
-                  3,000 customers.
-                  <span className="hero-spark" aria-hidden="true">
-                    <IconSpark size={26} />
+            <SiteNav />
+
+            <div className="hero-head">
+              <h1 className="hero-title">
+                <span className="hero-title-group">
+                  <span className="hero-line-one">Meet your</span>
+                  <span className="hero-line-two">next 3,000</span>
+                </span>
+                <span className="hero-title-group hero-title-group--end">
+                  <span className="hero-line-one">In just</span>
+                  <span className="hero-line-two">
+                    one day.
+                    <span className="hero-spark" aria-hidden="true">
+                      <IconSpark size={26} />
+                    </span>
                   </span>
                 </span>
               </h1>
-              <p className="hero-sub">
-                Expolink is a one-day expo where local business owners meet buyers, partners, and
-                press — without the noise of a giant trade show. One booth, a full day of real
-                conversations.
-              </p>
-              <div className="hero-actions">
-                <Link className="btn btn-primary" href="/register">
-                  Register your business
-                  <span className="btn-icon">
-                    <IconArrow size={16} />
-                  </span>
-                </Link>
-                <a className="btn btn-soft" href="#booths">
-                  See booth options
-                </a>
-              </div>
-              <div className="hero-stats">
-                <div className="hero-stat">
-                  <b>3,000+</b>
-                  <span>buyers expected</span>
-                </div>
-                <div className="hero-stat">
-                  <b>120</b>
-                  <span>local exhibitors</span>
-                </div>
-                <div className="hero-stat">
-                  <b>1 day</b>
-                  <span>to fill your pipeline</span>
-                </div>
-              </div>
             </div>
 
-            <div className="hero-art">
-              <div className="hero-panel">
-                <span className="hero-panel-tag">
-                  <span className="hero-panel-dot" aria-hidden="true" />
-                  {event.dateShort} · Hall A
-                </span>
-                <h2>Your booth, in the middle of the action.</h2>
-                <div className="hero-panel-features">
-                  <div>
-                    <IconStore size={18} />
-                    <span>Prime<br />position</span>
-                  </div>
-                  <div>
-                    <IconUsers size={18} />
-                    <span>Buyers with<br />intent</span>
-                  </div>
-                  <div>
-                    <IconLink size={18} />
-                    <span>Lead list<br />next day</span>
-                  </div>
-                </div>
+            <div className="hero-panel">
+              <div className="hero-panel-decor" aria-hidden="true">
+                <span />
+                <span />
+              </div>
+
+              <div className="hero-subject" aria-hidden="true">
                 <img
                   src="/hero-art-lilac.webp"
                   alt=""
@@ -177,13 +138,71 @@ export default function HomePage() {
                 />
               </div>
 
-              <div className="hero-float-card">
-                <span className="hero-float-thumb" aria-hidden="true" />
-                <span className="hero-float-copy">
-                  <small>Most popular</small>
-                  <strong>Corner booth</strong>
-                  <span>3 × 6 m · $400</span>
+              <div className="hero-panel-copy">
+                <span className="hero-panel-tag">
+                  <span className="hero-panel-dot" aria-hidden="true" />
+                  {event.boothsLeft} booths left
                 </span>
+                <h2>Your booth, in the middle of the action.</h2>
+                <p className="hero-panel-sub">
+                  Meet buyers, partners, and press without the noise of a giant trade show. One
+                  booth, one day, real conversations.
+                </p>
+                <Link className="btn btn-primary" href="/register">
+                  Register your business
+                  <span className="btn-icon">
+                    <IconArrow size={16} />
+                  </span>
+                </Link>
+                <div className="hero-proof">
+                  <span className="hero-avatars" aria-hidden="true">
+                    <i><IconStore size={12} /></i>
+                    <i><IconUsers size={12} /></i>
+                    <i><IconSpark size={12} /></i>
+                  </span>
+                  <span className="hero-proof-text">
+                    Trusted by <b>120</b> local businesses
+                  </span>
+                </div>
+              </div>
+
+              <div className="hero-panel-side">
+                <div className="hero-panel-features">
+                  <div>
+                    <span className="hero-feature-icon">
+                      <IconStore size={15} />
+                    </span>
+                    <span>Prime<br />position</span>
+                  </div>
+                  <div>
+                    <span className="hero-feature-icon">
+                      <IconUsers size={15} />
+                    </span>
+                    <span>Buyers with<br />intent</span>
+                  </div>
+                  <div>
+                    <span className="hero-feature-icon">
+                      <IconLink size={15} />
+                    </span>
+                    <span>Lead list<br />next day</span>
+                  </div>
+                </div>
+
+                <div className="hero-side-bottom">
+                  <p className="hero-side-label">Featured booth</p>
+
+                  <Link className="hero-shop-card" href="/register?package=corner">
+                    <span className="hero-shop-thumb" aria-hidden="true" />
+                    <span className="hero-shop-body">
+                      <strong className="hero-shop-name">Corner booth</strong>
+                      <span className="hero-shop-meta">3 × 6 m · most popular</span>
+                      <span className="hero-shop-price">
+                        <IconTicket size={13} />
+                        $400
+                      </span>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -260,28 +279,44 @@ export default function HomePage() {
 
       <section className="section section-why" id="why">
         <div className="container">
-          <div className="section-head">
-            <span className="section-eyebrow">Why exhibit</span>
-            <h2>
-              Your next 50 customers are{' '}
-              <span className="text-purple">already in the building.</span>
-            </h2>
-            <p className="section-sub">
-              Trade shows work when the room is built for conversations. Expolink caps exhibitors
-              at 120 and markets hard to local buyers, so every aisle stays busy.
-            </p>
-          </div>
+          <div className="why-split">
+            <article className="why-panel why-panel--intro">
+              <span className="section-eyebrow">Why exhibit</span>
+              <h2>
+                Your next 50 customers are{' '}
+                <span className="text-purple">already in the building.</span>
+              </h2>
+              <p className="section-sub">
+                Trade shows work when the room is built for conversations. Expolink caps
+                exhibitors at 120 and markets hard to local buyers, so every aisle stays busy.
+              </p>
+              <div className="why-visual" aria-hidden="true">
+                <img
+                  src="/hero-art-lilac.webp"
+                  alt=""
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              </div>
+            </article>
 
-          <div className="feature-grid">
-            {benefits.map(({ icon: Icon, title, text }) => (
-              <article className="feature" key={title}>
-                <span className="icon-tile">
-                  <Icon size={23} />
-                </span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
+            <article className="why-panel why-panel--list">
+              <h2>What you leave with.</h2>
+              <ul className="benefit-list">
+                {benefits.map(({ icon: Icon, title, text }) => (
+                  <li key={title}>
+                    <span className="benefit-icon">
+                      <Icon size={18} />
+                    </span>
+                    <div>
+                      <strong>{title}</strong>
+                      <p>{text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </article>
           </div>
         </div>
       </section>
