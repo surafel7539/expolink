@@ -87,7 +87,7 @@ textarea {
 }
 
 section[id] {
-  scroll-margin-top: 24px;
+  scroll-margin-top: 108px;
 }
 
 .skip-link {
@@ -353,38 +353,12 @@ section[id] {
   transform: rotate(-45deg);
 }
 
-/* Nav rendered inside the hero card */
-
-.hero-card > .site-header {
-  position: relative;
-  z-index: 5;
-  padding: 2px 2px 0;
-  background: none;
-  backdrop-filter: none;
-}
-
-.hero-card > .site-header .nav {
-  padding: 4px 2px;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.hero-card > .site-header .nav-links > a {
-  padding: 8px 10px;
-}
-
-.hero-card > .site-header .nav-cta {
-  padding: 10px 20px;
-  font-size: 0.86rem;
-}
-
 /* ---------- Hero ---------- */
 
 .hero-section {
   position: relative;
   overflow: hidden;
-  padding: 34px 0 clamp(56px, 7vw, 84px);
+  padding: 20px 0 clamp(56px, 7vw, 84px);
 }
 
 .hero-section::before {
@@ -435,7 +409,7 @@ section[id] {
 }
 
 .hero-head {
-  padding: clamp(14px, 2vw, 24px) clamp(10px, 2.2vw, 30px) clamp(18px, 2.6vw, 32px);
+  padding: clamp(20px, 2.8vw, 34px) clamp(10px, 2.2vw, 30px) clamp(18px, 2.6vw, 32px);
 }
 
 .hero-title {
@@ -2482,7 +2456,7 @@ section[id] {
 
 @media (max-width: 620px) {
   .hero-section {
-    padding-top: 18px;
+    padding-top: 14px;
   }
 
   .hero-card {
@@ -2491,7 +2465,7 @@ section[id] {
   }
 
   .hero-head {
-    padding: 12px 6px 18px;
+    padding: 16px 6px 18px;
   }
 
   .hero-panel {
@@ -2613,7 +2587,7 @@ section[id] {
   }
 
   .hero-head {
-    padding: 10px 4px 16px;
+    padding: 14px 4px 16px;
   }
 
   .hero-line-one {

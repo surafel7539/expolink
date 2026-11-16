@@ -99,11 +99,10 @@ const faqs = [
 export default function HomePage() {
   return (
     <>
+      <SiteNav />
       <section className="hero-section">
         <div className="hero-shell">
           <div className="hero-card">
-            <SiteNav />
-
             <div className="hero-head">
               <h1 className="hero-title">
                 <span className="hero-title-group">
