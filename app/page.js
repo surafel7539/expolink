@@ -8,6 +8,7 @@ import {
   IconLink,
   IconMegaphone,
   IconPin,
+  IconSpark,
   IconStore,
   IconTicket,
   IconTrend,
@@ -102,11 +103,17 @@ export default function HomePage() {
           <div className="hero-card">
             <div className="hero-copy">
               <span className="hero-kicker">
-                <span className="hero-kicker-dot" aria-hidden="true" />
+                <IconSpark size={14} />
                 Registration open · {event.boothsLeft} booths left
               </span>
               <h1>
-                Meet your next <span className="mark">3,000 customers.</span>
+                <span className="hero-line-one">Meet your next</span>
+                <span className="hero-line-two">
+                  3,000 customers.
+                  <span className="hero-spark" aria-hidden="true">
+                    <IconSpark size={26} />
+                  </span>
+                </span>
               </h1>
               <p className="hero-sub">
                 Expolink is a one-day expo where local business owners meet buyers, partners, and
@@ -116,9 +123,11 @@ export default function HomePage() {
               <div className="hero-actions">
                 <Link className="btn btn-primary" href="/register">
                   Register your business
-                  <IconArrow size={18} />
+                  <span className="btn-icon">
+                    <IconArrow size={16} />
+                  </span>
                 </Link>
-                <a className="btn btn-hero-ghost" href="#booths">
+                <a className="btn btn-soft" href="#booths">
                   See booth options
                 </a>
               </div>
@@ -138,8 +147,44 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="hero-art" aria-hidden="true">
-              <img src="/hero-art-dark.webp" alt="" width="1024" height="1024" fetchPriority="high" />
+            <div className="hero-art">
+              <div className="hero-panel">
+                <span className="hero-panel-tag">
+                  <span className="hero-panel-dot" aria-hidden="true" />
+                  {event.dateShort} · Hall A
+                </span>
+                <h2>Your booth, in the middle of the action.</h2>
+                <div className="hero-panel-features">
+                  <div>
+                    <IconStore size={18} />
+                    <span>Prime<br />position</span>
+                  </div>
+                  <div>
+                    <IconUsers size={18} />
+                    <span>Buyers with<br />intent</span>
+                  </div>
+                  <div>
+                    <IconLink size={18} />
+                    <span>Lead list<br />next day</span>
+                  </div>
+                </div>
+                <img
+                  src="/hero-art-lilac.webp"
+                  alt=""
+                  width="1024"
+                  height="1024"
+                  fetchPriority="high"
+                />
+              </div>
+
+              <div className="hero-float-card">
+                <span className="hero-float-thumb" aria-hidden="true" />
+                <span className="hero-float-copy">
+                  <small>Most popular</small>
+                  <strong>Corner booth</strong>
+                  <span>3 × 6 m · $400</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -173,7 +218,7 @@ export default function HomePage() {
                 <div className="booth-body">
                   <div className="booth-title-row">
                     <h3>{item.name}</h3>
-                    {item.popular && <span className="tag-cyan">Most popular</span>}
+                    {item.popular && <span className="tag-popular">Most popular</span>}
                   </div>
                   <p className="booth-blurb">{item.blurb}</p>
                   <div className="booth-price">
@@ -291,6 +336,9 @@ export default function HomePage() {
       <section className="section" id="details">
         <div className="container">
           <div className="detail-panel">
+            <span className="detail-spark" aria-hidden="true">
+              <IconSpark size={26} />
+            </span>
             <div className="detail-copy">
               <span className="panel-eyebrow">Event details</span>
               <h2>One day. One hall. Every local business worth knowing.</h2>
@@ -369,6 +417,9 @@ export default function HomePage() {
       <section className="section section-cta">
         <div className="container">
           <div className="cta">
+            <span className="cta-spark" aria-hidden="true">
+              <IconSpark size={30} />
+            </span>
             <div>
               <h2>{event.boothsLeft} booths left for 2027.</h2>
               <p>
@@ -378,7 +429,9 @@ export default function HomePage() {
             </div>
             <Link className="btn btn-ink" href="/register">
               Register your business
-              <IconArrow size={18} />
+              <span className="btn-icon">
+                <IconArrow size={16} />
+              </span>
             </Link>
           </div>
         </div>

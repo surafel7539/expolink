@@ -5,6 +5,7 @@ import SiteFooter from '@/components/SiteFooter';
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
+  style: ['normal', 'italic'],
   variable: '--font-jakarta',
   display: 'swap',
 });
@@ -19,7 +20,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#0a0c0f',
+  themeColor: '#f2effa',
 };
 
 export default function RootLayout({ children }) {

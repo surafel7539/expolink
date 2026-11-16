@@ -20,7 +20,7 @@ export default function NotFound() {
             Back to home
             <IconArrow size={17} />
           </Link>
-          <Link className="btn btn-hero-ghost" href="/register">
+          <Link className="btn btn-soft" href="/register">
             Register your business
           </Link>
         </div>

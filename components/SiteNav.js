@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { event } from '@/lib/event';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -32,34 +33,39 @@ export default function SiteNav() {
   return (
     <header className="site-header">
       <div className="container nav">
-        <Link href="/" className="brand" aria-label="Expolink home">
-          Expolink<span className="brand-dot">.</span>
-        </Link>
-
         <nav id="site-nav" className={`nav-links ${open ? 'is-open' : ''}`} aria-label="Main">
           {links.map((link) => (
             <Link key={link.label} href={link.href} onClick={() => setOpen(false)}>
               {link.label}
             </Link>
           ))}
-          <Link className="btn btn-outline btn-sm nav-cta" href="/register">
-            Register
-          </Link>
         </nav>
 
-        <button
-          type="button"
-          className="nav-toggle"
-          aria-expanded={open}
-          aria-controls="site-nav"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span className={`nav-toggle-bars ${open ? 'is-open' : ''}`} aria-hidden="true">
-            <span />
-            <span />
+        <Link href="/" className="brand" aria-label="Expolink home">
+          Expolink<span className="brand-dot">.</span>
+        </Link>
+
+        <div className="nav-actions">
+          <span className="nav-date">
+            {event.dateShort} · {event.venue}
           </span>
-        </button>
+          <Link className="btn btn-primary btn-sm nav-cta" href="/register">
+            Register
+          </Link>
+          <button
+            type="button"
+            className="nav-toggle"
+            aria-expanded={open}
+            aria-controls="site-nav"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className={`nav-toggle-bars ${open ? 'is-open' : ''}`} aria-hidden="true">
+              <span />
+              <span />
+            </span>
+          </button>
+        </div>
       </div>
     </header>
   );

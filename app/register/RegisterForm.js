@@ -404,7 +404,7 @@ export default function RegisterForm({ initialPackage }) {
               <span className="package-info">
                 <span className="package-name">
                   <strong>{item.name}</strong>
-                  {item.popular && <span className="tag-cyan">Most popular</span>}
+                  {item.popular && <span className="tag-popular">Most popular</span>}
                 </span>
                 <span>
                   {item.size} · {item.blurb}
