@@ -1,7 +1,8 @@
 node_modules
 .next
 out
-data/registrations.json
+.vercel
+.env*.local
 .preview
 vibe_images
 *.log
