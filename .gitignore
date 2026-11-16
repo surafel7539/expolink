@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+data/registrations.json
+.preview
+vibe_images
+*.log
+.DS_Store

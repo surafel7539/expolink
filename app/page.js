@@ -1,0 +1,388 @@
+import Link from 'next/link';
+import { event, industries, packages } from '@/lib/event';
+import {
+  IconArrow,
+  IconCalendar,
+  IconCheck,
+  IconClock,
+  IconLink,
+  IconMegaphone,
+  IconPin,
+  IconStore,
+  IconTicket,
+  IconTrend,
+  IconUsers,
+} from '@/components/Icons';
+
+export const metadata = {
+  title: { absolute: 'Expolink Business Expo 2027 — Register your business' },
+  description:
+    'Register your business for Expolink 2027, a one-day expo connecting local business owners with 3,000+ buyers, partners, and press.',
+};
+
+const benefits = [
+  {
+    icon: IconStore,
+    title: 'Meet buyers with intent',
+    text: 'Attendees register because they are looking for a local supplier, service, or product. No cold outreach, no guessing.',
+  },
+  {
+    icon: IconMegaphone,
+    title: 'Launch in front of a crowd',
+    text: 'Debut a new product, menu, or service. Exhibitors can book a 10-minute slot on the demo stage to show it off.',
+  },
+  {
+    icon: IconTrend,
+    title: 'Leave with leads, not loose cards',
+    text: 'Every visitor badge is scanned at your booth. You get the full contact list by email the next morning.',
+  },
+  {
+    icon: IconLink,
+    title: 'Build the right partnerships',
+    text: 'Meet complementary businesses, distributors, and local press in one afternoon instead of ten separate coffees.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Pick a booth and register',
+    text: 'Two minutes, no payment. Tell us about your business and choose a package that fits.',
+  },
+  {
+    title: 'We confirm and invoice',
+    text: 'A real person reviews your registration and sends an invoice within two business days. Your spot is held for five days.',
+  },
+  {
+    title: 'Show up and set up',
+    text: 'Load in from 7:00 AM. Tables, chairs, power, and Wi-Fi are waiting. Doors open at 9:00.',
+  },
+];
+
+const included = [
+  'Venue Wi-Fi and power at your booth',
+  'Listing in the event app',
+  'Two or more exhibitor passes',
+  'Morning coffee and lunch',
+  'Access to the exhibitor lounge',
+  'Attendee contact list the next day',
+];
+
+const faqs = [
+  {
+    q: 'Who can register?',
+    a: 'Any registered local business with a product, service, or cause to share. Solo founders are welcome, and two businesses can share a booth with approval.',
+  },
+  {
+    q: 'Is the booth price all-in?',
+    a: 'Yes. Table, chairs, power, Wi-Fi, passes, and your event app listing are included. Extra furniture or banner printing is available at cost.',
+  },
+  {
+    q: 'Do I pay when I register?',
+    a: 'No. We review each registration first and send an invoice within two business days. Your booth is held for five days while you arrange payment.',
+  },
+  {
+    q: 'Can two businesses share a booth?',
+    a: 'Yes, up to two businesses per booth with approval. Both get listed in the event app. Email us both names after you register.',
+  },
+  {
+    q: 'What if I need to cancel?',
+    a: 'You get a full refund up to 21 days before the event. After that, you can transfer your booth to another business at no charge.',
+  },
+  {
+    q: 'Can I sell food or drink?',
+    a: 'Yes, with a temporary food permit from the city. Mention it in your business description and we will send you the paperwork.',
+  },
+];
+
+export default function HomePage() {
+  return (
+    <>
+      <section className="hero-section">
+        <div className="hero-shell">
+          <div className="hero-card">
+            <div className="hero-copy">
+              <span className="hero-kicker">
+                <span className="hero-kicker-dot" aria-hidden="true" />
+                Registration open · {event.boothsLeft} booths left
+              </span>
+              <h1>
+                Meet your next <span className="mark">3,000 customers.</span>
+              </h1>
+              <p className="hero-sub">
+                Expolink is a one-day expo where local business owners meet buyers, partners, and
+                press — without the noise of a giant trade show. One booth, a full day of real
+                conversations.
+              </p>
+              <div className="hero-actions">
+                <Link className="btn btn-primary" href="/register">
+                  Register your business
+                  <IconArrow size={18} />
+                </Link>
+                <a className="btn btn-hero-ghost" href="#booths">
+                  See booth options
+                </a>
+              </div>
+              <div className="hero-stats">
+                <div className="hero-stat">
+                  <b>3,000+</b>
+                  <span>buyers expected</span>
+                </div>
+                <div className="hero-stat">
+                  <b>120</b>
+                  <span>local exhibitors</span>
+                </div>
+                <div className="hero-stat">
+                  <b>1 day</b>
+                  <span>to fill your pipeline</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-art" aria-hidden="true">
+              <img src="/hero-art-dark.webp" alt="" width="1024" height="1024" fetchPriority="high" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-booths" id="booths">
+        <div className="container">
+          <div className="section-head section-head-row">
+            <div>
+              <span className="section-eyebrow">Booth packages</span>
+              <h2>
+                Pick a booth. <span className="text-purple">We&apos;ll fill the room.</span>
+              </h2>
+              <p className="section-sub">
+                Every package includes the essentials. One price for the full day, and you do not
+                pay until we confirm your registration.
+              </p>
+            </div>
+            <span className="event-pill">
+              <IconCalendar size={16} />
+              {event.dateShort} · {event.venue}
+            </span>
+          </div>
+
+          <div className="booth-grid">
+            {packages.map((item) => (
+              <article className={`booth-card ${item.popular ? 'is-popular' : ''}`} key={item.id}>
+                <div className={`booth-art booth-art--${item.id}`}>
+                  <span className="booth-size">{item.size}</span>
+                </div>
+                <div className="booth-body">
+                  <div className="booth-title-row">
+                    <h3>{item.name}</h3>
+                    {item.popular && <span className="tag-cyan">Most popular</span>}
+                  </div>
+                  <p className="booth-blurb">{item.blurb}</p>
+                  <div className="booth-price">
+                    <b>${item.price}</b>
+                    <span>one-time</span>
+                  </div>
+                  <ul className="booth-includes">
+                    {item.includes.map((line) => (
+                      <li key={line}>
+                        <IconCheck size={15} />
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    className={`btn ${item.popular ? 'btn-primary' : 'btn-outline'} btn-block booth-cta`}
+                    href={`/register?package=${item.id}`}
+                  >
+                    Choose {item.name.toLowerCase()}
+                    <IconArrow size={17} />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="industry-strip">
+            <span className="industry-label">Who exhibits</span>
+            <div className="industry-chips">
+              {industries.slice(0, 8).map((industry) => (
+                <span key={industry} className="chip">
+                  {industry}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-why" id="why">
+        <div className="container">
+          <div className="section-head">
+            <span className="section-eyebrow">Why exhibit</span>
+            <h2>
+              Your next 50 customers are{' '}
+              <span className="text-purple">already in the building.</span>
+            </h2>
+            <p className="section-sub">
+              Trade shows work when the room is built for conversations. Expolink caps exhibitors
+              at 120 and markets hard to local buyers, so every aisle stays busy.
+            </p>
+          </div>
+
+          <div className="feature-grid">
+            {benefits.map(({ icon: Icon, title, text }) => (
+              <article className="feature" key={title}>
+                <span className="icon-tile">
+                  <Icon size={23} />
+                </span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="how-section" id="how">
+        <div className="container">
+          <div className="how-panel">
+            <div className="section-head">
+              <span className="section-eyebrow">How it works</span>
+              <h2>From sign-up to doors open in three steps.</h2>
+              <p className="section-sub">
+                No paperwork maze. Three steps and a real person on the other end if you get stuck.
+              </p>
+            </div>
+
+            <div className="how-grid">
+              <ol className="steps">
+                {steps.map((step, index) => (
+                  <li className="step" key={step.title}>
+                    <span className="step-num">0{index + 1}</span>
+                    <div>
+                      <h3>{step.title}</h3>
+                      <p>{step.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              <aside className="included-card">
+                <span className="icon-tile">
+                  <IconTicket size={22} />
+                </span>
+                <h3>Every booth includes</h3>
+                <ul className="check-list">
+                  {included.map((line) => (
+                    <li key={line}>
+                      <IconCheck size={16} />
+                      {line}
+                    </li>
+                  ))}
+                </ul>
+                <p className="included-note">
+                  Questions about what to bring? Email{' '}
+                  <a href={`mailto:${event.email}`}>{event.email}</a> and we will help you plan.
+                </p>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="details">
+        <div className="container">
+          <div className="detail-panel">
+            <div className="detail-copy">
+              <span className="panel-eyebrow">Event details</span>
+              <h2>One day. One hall. Every local business worth knowing.</h2>
+              <p>
+                Riverside Convention Center, Hall A. Free for visitors, built for exhibitors. Load
+                in early, stay for the after-hours mixer, and leave with a full contact list.
+              </p>
+              <Link className="btn btn-primary" href="/register">
+                Reserve a booth
+                <IconArrow size={17} />
+              </Link>
+            </div>
+
+            <div className="detail-grid">
+              <div className="detail-item">
+                <IconCalendar size={19} />
+                <span>Date</span>
+                <strong>{event.date}</strong>
+              </div>
+              <div className="detail-item">
+                <IconClock size={19} />
+                <span>Show hours</span>
+                <strong>{event.time}</strong>
+              </div>
+              <div className="detail-item">
+                <IconPin size={19} />
+                <span>Venue</span>
+                <strong>
+                  {event.venue}
+                  <br />
+                  {event.address}
+                </strong>
+              </div>
+              <div className="detail-item">
+                <IconTicket size={19} />
+                <span>Exhibitor load-in</span>
+                <strong>{event.loadIn}</strong>
+              </div>
+              <div className="detail-item">
+                <IconUsers size={19} />
+                <span>After-hours mixer</span>
+                <strong>5:30 PM — 7:00 PM · Hall A</strong>
+              </div>
+              <div className="detail-item">
+                <IconLink size={19} />
+                <span>Need help?</span>
+                <strong>{event.email}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="faq">
+        <div className="container">
+          <div className="section-head">
+            <span className="section-eyebrow">FAQ</span>
+            <h2>Good questions, straight answers.</h2>
+            <p className="section-sub">
+              Still unsure? Email <a href={`mailto:${event.email}`}>{event.email}</a> — a human
+              usually replies the same day.
+            </p>
+          </div>
+
+          <div className="faq-list">
+            {faqs.map((faq) => (
+              <details className="faq" key={faq.q}>
+                <summary>{faq.q}</summary>
+                <p>{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-cta">
+        <div className="container">
+          <div className="cta">
+            <div>
+              <h2>{event.boothsLeft} booths left for 2027.</h2>
+              <p>
+                Register today and we will hold your spot while you sort the details. No payment
+                until your registration is confirmed.
+              </p>
+            </div>
+            <Link className="btn btn-ink" href="/register">
+              Register your business
+              <IconArrow size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
