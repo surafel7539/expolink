@@ -6,7 +6,7 @@ import { IconCalendar, IconCheck, IconClock, IconPin, IconTicket } from '@/compo
 export const metadata = {
   title: 'Register your business',
   description:
-    'Reserve a booth at Expolink 2027. Choose a package, tell us about your business, and we will confirm your spot within two business days.',
+    'Reserve a booth at Expolink Global 2027. Choose a package, tell us about your business, and we will confirm your spot within two business days.',
 };
 
 export default async function RegisterPage({ searchParams }) {
@@ -21,7 +21,7 @@ export default async function RegisterPage({ searchParams }) {
         <div className="container">
           <span className="section-eyebrow">Exhibitor registration</span>
           <h1>
-            Claim your booth at <span className="mark">Expolink 2027.</span>
+            Claim your booth at <span className="mark">Expolink Global 2027.</span>
           </h1>
           <p>
             Tell us a little about your business and pick a package. It takes about two minutes,

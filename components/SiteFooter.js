@@ -8,8 +8,8 @@ export default function SiteFooter() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link href="/" className="brand" aria-label="Expolink home">
-              Expolink<span className="brand-dot">.</span>
+            <Link href="/" className="brand" aria-label="Expolink Global home">
+              Expolink Global<span className="brand-dot">.</span>
             </Link>
             <p>
               A one-day expo connecting local business owners with the customers and partners
@@ -44,7 +44,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2027 Expolink. Built for local business.</span>
+          <span>© 2027 Expolink Global. Built for local business.</span>
           <span>
             {event.date} · {event.venue}
           </span>

@@ -430,7 +430,7 @@ export default function RegisterForm({ initialPackage }) {
             {...errorProps('consent', errors)}
           />
           <span>
-            I agree to be contacted by the Expolink team about this registration and the event.
+            I agree to be contacted by the Expolink Global team about this registration and the event.
           </span>
         </label>
         {errors.consent && (

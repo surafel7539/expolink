@@ -17,9 +17,9 @@ import {
 } from '@/components/Icons';
 
 export const metadata = {
-  title: { absolute: 'Expolink Business Expo 2027 — Register your business' },
+  title: { absolute: 'Expolink Global Business Expo 2027 — Register your business' },
   description:
-    'Register your business for Expolink 2027, a one-day expo connecting local business owners with 3,000+ buyers, partners, and press.',
+    'Register your business for Expolink Global 2027, a one-day expo connecting local business owners with 3,000+ buyers, partners, and press.',
 };
 
 const benefits = [
@@ -286,7 +286,7 @@ export default function HomePage() {
                 <span className="text-purple">already in the building.</span>
               </h2>
               <p className="section-sub">
-                Trade shows work when the room is built for conversations. Expolink caps
+                Trade shows work when the room is built for conversations. Expolink Global caps
                 exhibitors at 120 and markets hard to local buyers, so every aisle stays busy.
               </p>
               <div className="why-visual" aria-hidden="true">

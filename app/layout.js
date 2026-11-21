@@ -11,11 +11,11 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata = {
   title: {
-    default: 'Expolink Business Expo 2027',
-    template: '%s · Expolink',
+    default: 'Expolink Global Business Expo 2027',
+    template: '%s · Expolink Global',
   },
   description:
-    'A one-day expo where local business owners meet customers, partners, and press. Register your business for Expolink 2027.',
+    'A one-day expo where local business owners meet customers, partners, and press. Register your business for Expolink Global 2027.',
 };
 
 export const viewport = {

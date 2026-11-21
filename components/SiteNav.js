@@ -41,8 +41,8 @@ export default function SiteNav() {
           ))}
         </nav>
 
-        <Link href="/" className="brand" aria-label="Expolink home">
-          Expolink<span className="brand-dot">.</span>
+        <Link href="/" className="brand" aria-label="Expolink Global home">
+          Expolink Global<span className="brand-dot">.</span>
         </Link>
 
         <div className="nav-actions">
